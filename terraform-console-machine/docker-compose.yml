@@ -1,0 +1,11 @@
+version: '3'
+services:
+  worker:
+    build:
+      context: .
+    container_name: worker
+    restart: unless-stopped
+    volumes:
+      - "<YOUR_GIT_ABSOLUTE_PATH>:/mnt/git"
+      - "/Users/<YOUR_LOCAL_USERNAME>/.aws:/root/.aws"
+    tty: true
